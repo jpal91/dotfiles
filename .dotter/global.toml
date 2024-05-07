@@ -53,3 +53,8 @@ type = "symbolic"
 
 [editor.files]
 editorconfig = "~/.editorconfig"
+
+[fd]
+
+[fd.files]
+fdignore = "~/.config/fd/ignore"
