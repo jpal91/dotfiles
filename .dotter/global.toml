@@ -27,7 +27,7 @@ type = "symbolic"
 
 [xonsh.files."xonsh/xonshrc"]
 target = "~/.xonshrc"
-type = "symbolic"
+type = "template"
 
 [nvim]
 
