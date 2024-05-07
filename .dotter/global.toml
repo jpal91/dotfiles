@@ -48,3 +48,8 @@ type = "template"
 [fish.files.fish]
 target = "~/.config/fish"
 type = "symbolic"
+
+[editor]
+
+[editor.files]
+editorconfig = "~/.editorconfig"
