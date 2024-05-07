@@ -38,3 +38,9 @@ type = "symbolic"
 "nvim/init.lua" = "~/.config/nvim/init.lua"
 "nvim/lazyvim.json" = "~/.config/nvim/lazyvim.json"
 "nvim/stylua.toml" = "~/.config/nvim/stylua.toml"
+
+[fish]
+
+[fish.files.fish]
+target = "~/.config/fish"
+type = "symbolic"
