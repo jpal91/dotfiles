@@ -1,0 +1,40 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+xonsh = ""
+
+[default.variables]
+
+[zsh]
+
+[zsh.files."zsh/zshrc"]
+target = "~/.zshrc"
+type = "template"
+
+[zsh.variables]
+zsh_home = "~/.dotfiles/zsh"
+
+[bash]
+
+[bash.files."bash/bashrc"]
+target = "~/.bashrc"
+type = "symbolic"
+
+[xonsh]
+
+[xonsh.files."xonsh/xonshrc"]
+target = "~/.xonshrc"
+type = "symbolic"
+
+[nvim]
+
+[nvim.files]
+"nvim/lua" = "~/.config/nvim/lua"
+"nvim/vim_conf" = "~/.config/nvim/vim_conf"
+"nvim/.neoconf.json" = "~/.config/nvim/.neoconf.json"
+"nvim/init.lua" = "~/.config/nvim/init.lua"
+"nvim/lazyvim.json" = "~/.config/nvim/lazyvim.json"
+"nvim/stylua.toml" = "~/.config/nvim/stylua.toml"
