@@ -23,6 +23,10 @@ zsh_home = "~/.dotfiles/zsh"
 target = "~/.bashrc"
 type = "symbolic"
 
+[bash.files."bash/bash_aliases"]
+target = "~/.bash_aliases"
+type = "symbolic"
+
 [xonsh]
 
 [xonsh.files."xonsh/xonshrc"]
