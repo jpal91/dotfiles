@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+
+
+# Fish Shell Additional Setup
+# Install Fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# Install bash plugin
+fisher install edc/bass
+
+# Install nvm plugin
+fisher install jorgebucaran/nvm.fish

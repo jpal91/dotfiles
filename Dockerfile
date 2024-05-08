@@ -1,12 +1,20 @@
 # Dockerfile to test environment setup correctly
 
-FROM alpine:3
+FROM ubuntu:jammy
 
-COPY . /.dotfiles
-
+ENV DOCKER_TEST="true"
 WORKDIR /.dotfiles
 
-RUN chmod +x fresh_install.sh; \ 
-  chmod +x dotter; 
+RUN \
+  apt update -y && apt upgrade -y; 
 
-CMD ["/bin/sh", "./fresh_install.sh"]
+RUN \
+  apt install -y musl-dev; \
+  apt install -y curl \
+  gcc \
+  git \
+  build-essential
+
+CMD ["/bin/bash"]
+
+# docker run -it --rm -v ~/.dotfiles/:/.dotfiles/ fresh
