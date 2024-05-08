@@ -15,6 +15,11 @@ zstyle ':vcs_info:*' formats ' %F{blue}|%f%K{default} %F{yellow}\ue0a0%f %B%F{gr
 source {{zsh_home}}/zsh_functions
 source {{zsh_home}}/zsh_prompt
 source {{zsh_home}}/zsh_aliases
+# source ~/.dotfiles/global_aliases.sh
+
+if [ -f ~/.global_aliases ]; then
+  source ~/.global_aliases
+fi
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes

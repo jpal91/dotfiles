@@ -58,3 +58,8 @@ editorconfig = "~/.editorconfig"
 
 [fd.files]
 fdignore = "~/.config/fd/ignore"
+
+[aliases]
+
+[aliases.files]
+"global_aliases.sh" = "~/.global_aliases"
