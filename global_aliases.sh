@@ -18,3 +18,9 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
+
+alias dotfiles='~/.dotfiles'
+
+if [ -f ~/bin/nv ]; then
+	alias nvim='~/bin/nv'
+fi
