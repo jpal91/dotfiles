@@ -24,3 +24,5 @@ alias dotfiles='~/.dotfiles'
 if [ -f ~/bin/nv ]; then
 	alias nvim='~/bin/nv'
 fi
+
+alias dotfiles='cd ~/.dotfiles/'

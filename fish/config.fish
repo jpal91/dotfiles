@@ -18,3 +18,5 @@ end
 # <<< conda initialize <<<
 
 starship init fish | source
+
+zoxide init fish | source
