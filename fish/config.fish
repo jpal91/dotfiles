@@ -1,6 +1,7 @@
 # Fish Config
 
 set -x NODE_VERSION (nvm current)
+set -x EDITOR nvim
 fish_add_path -a ~/.local/share/pnpm/
 
 # >>> conda initialize >>>
