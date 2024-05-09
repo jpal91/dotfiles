@@ -2,6 +2,10 @@
 
 set -x NODE_VERSION (nvm current)
 set -x EDITOR nvim
+
+# Keybindings
+bind \ck kill-whole-line
+
 fish_add_path -a ~/.local/share/pnpm/
 
 # >>> conda initialize >>>

@@ -1,6 +1,6 @@
 # Global Maskfile
 
-## say (args)
+## say (args?)
 
 > Says hello with args
 
@@ -79,4 +79,11 @@ fi
 cd $TARGET_DIR
 
 fd --type file --exec sd $PREVIEW "$HOME" '$$HOME'
+```
+
+## archive-dev
+> Archives the dev directory
+
+```bash
+cd ~/dev; fd -t d -d 1 --changed-before '2024-01-01' -x tar cJf ~/archive/{/.}.tar.xf {}/
 ```
