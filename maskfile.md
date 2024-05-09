@@ -1,11 +1,11 @@
 # Global Maskfile
 
-## say
+## say (args)
 
-> Says hello
+> Says hello with args
 
 ```sh
-echo hello
+echo hello "$@"
 ```
 
 ## kali-build

@@ -26,3 +26,5 @@ if [ -f ~/bin/nv ]; then
 fi
 
 alias dotfiles='cd ~/.dotfiles/'
+
+alias msk='mask --maskfile ~/.dotfiles/maskfile.md'
