@@ -87,3 +87,46 @@ fd --type file --exec sd $PREVIEW "$HOME" '$$HOME'
 ```bash
 cd ~/dev; fd -t d -d 1 --changed-before '2024-01-01' -x tar cJf ~/archive/{/.}.tar.xf {}/
 ```
+
+## take (dir)
+> Short for `mkdir && cd`. Can be used with `git` and `tar` packages as well 
+
+```bash
+if [[ $dir =~ ^(https?|ftp).*\.(tar\.(gz|bz2|xz)|tgz)$ ]]; then
+  $MASK takeurl "$dir"
+elif [[ $dir =~ ^([A-Za-z0-9]\+@|https?|git|ssh|ftps?|rsync).*\.git/?$ ]]; then
+  $MASK takegit "$dir"
+else
+  $MASK takedir "$dir"
+fi
+```
+
+## takeurl (url)
+> Redirect from `take` when url containing a `tar` like file is present
+
+```bash
+local data thedir
+data="$(mktemp)"
+curl -L "$url" > "$data"
+tar xf "$data"
+thedir="$(tar tf "$data" | head -n 1)"
+rm "$data"
+cd "$thedir"
+ ```
+
+## takegit (url)
+> Redirect from `take` when a git url is present
+
+```bash
+git clone "$url"
+cd "$(basename ${url%%.git})"
+```
+
+## takedir (dir)
+> Redirect from `take` if the arg is a new dir name
+
+```bash
+mkdir -p $dir && cd $dir
+```
+
+
