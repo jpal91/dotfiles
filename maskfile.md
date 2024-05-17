@@ -39,6 +39,7 @@ echo $TEMP
 ```
 
 ## anon (file)
+
 > Removes and replaces instances of the home directory within a file to literal `$HOME`
 
 ```bash
@@ -82,6 +83,7 @@ fd --type file --exec sd $PREVIEW "$HOME" '$$HOME'
 ```
 
 ## archive-dev
+
 > Archives the dev directory
 
 ```bash
@@ -89,6 +91,7 @@ cd ~/dev; fd -t d -d 1 --changed-before '2024-01-01' -x tar cJf ~/archive/{/.}.t
 ```
 
 ## take (dir)
+
 > Short for `mkdir && cd`. Can be used with `git` and `tar` packages as well 
 
 ```bash
@@ -102,6 +105,7 @@ fi
 ```
 
 ## takeurl (url)
+
 > Redirect from `take` when url containing a `tar` like file is present
 
 ```bash
@@ -115,6 +119,7 @@ cd "$thedir"
  ```
 
 ## takegit (url)
+
 > Redirect from `take` when a git url is present
 
 ```bash
@@ -123,6 +128,7 @@ cd "$(basename ${url%%.git})"
 ```
 
 ## takedir (dir)
+
 > Redirect from `take` if the arg is a new dir name
 
 ```bash
