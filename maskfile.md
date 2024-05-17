@@ -84,10 +84,14 @@ fd --type file --exec sd $PREVIEW "$HOME" '$$HOME'
 
 ## archive-dev
 
-> Archives the dev directory
+> Archives the dev directory with any repos that haven't been touched in 6+ months
 
 ```bash
-cd ~/dev; fd -t d -d 1 --changed-before '2024-01-01' -x tar cJf ~/archive/{/.}.tar.xf {}/
+cd ~/dev
+fd --type directory \
+  --depth 1 \
+  --changed-before $(date -d '6 months ago' +%Y-%m-%d) \
+  --exec tar cJf ~/archive/{/.}.tar.xf {}/
 ```
 
 ## take (dir)
