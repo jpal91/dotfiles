@@ -9,10 +9,12 @@ return {
         -- disable bullets for now. See https://github.com/lukas-reineke/headlines.nvim/issues/66
         bullets = {},
         fat_headlines = false,
+        -- fat_headlines_lower_string = "▔",
+        -- fat_headlines_upper_string = "▁",
       }
       for i = 1, 6 do
         local hl = "Headline" .. i
-        vim.api.nvim_set_hl(0, hl, { link = "Headline", default = true })
+        vim.api.nvim_set_hl(0, hl, { link = "Headline", bold = true })
         table.insert(opts[ft].headline_highlights, hl)
       end
     end
