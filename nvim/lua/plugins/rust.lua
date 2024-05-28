@@ -11,6 +11,9 @@ return {
         vim.keymap.set("n", "<leader>dr", function()
           vim.cmd.RustLsp("debuggables")
         end, { desc = "Rust Debuggables", buffer = bufnr })
+        vim.keymap.set("n", "<leader>dc", function()
+          vim.cmd.RustLsp("flyCheck")
+        end, { desc = "Run fly check", buffer = bufnr })
       end,
       default_settings = {
         -- rust-analyzer language server configuration
@@ -28,6 +31,7 @@ return {
             command = "clippy",
             extraArgs = { "--no-deps" },
           },
+          -- checkOnSave = false,
           procMacro = {
             enable = true,
             ignored = {
