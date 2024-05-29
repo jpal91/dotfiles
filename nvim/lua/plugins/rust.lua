@@ -14,6 +14,9 @@ return {
         vim.keymap.set("n", "<leader>dc", function()
           vim.cmd.RustLsp("flyCheck")
         end, { desc = "Run fly check", buffer = bufnr })
+        vim.keymap.set("n", "<leader>dm", function()
+          vim.cmd.RustLsp("expandMacro")
+        end, { desc = "Expand Macro", buffer = bufnr })
       end,
       default_settings = {
         -- rust-analyzer language server configuration
