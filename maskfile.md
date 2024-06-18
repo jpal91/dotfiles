@@ -139,4 +139,11 @@ cd "$(basename ${url%%.git})"
 mkdir -p $dir && cd $dir
 ```
 
+## exclude-local (file)
+
+> Ignore a git file locally without adding to gitignore
+
+```bash
+echo "$file" >> .git/info/exclude
+```
 

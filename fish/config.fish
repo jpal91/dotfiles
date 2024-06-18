@@ -1,4 +1,5 @@
 # Fish Config
+source ~/.config/fish/functions/defaults.fish
 
 set -x NODE_VERSION (nvm current)
 set -x EDITOR nvim
@@ -7,6 +8,7 @@ set -x EDITOR nvim
 bind \ck kill-whole-line
 
 fish_add_path -a ~/.local/share/pnpm/
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

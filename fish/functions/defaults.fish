@@ -1,3 +1,11 @@
+function chr
+    python -c "print(chr($argv))"
+end
+
+function ord
+    python -c "print(ord('$argv'))"
+end
+
 function takeurl
     set -l data (mktemp)
     curl -L "$argv" >"$data"
@@ -28,4 +36,8 @@ function take
     else
         takedir $dir
     end
+end
+
+function nvm
+    bass source ~/.nvm/nvm.sh -- no-use ';' nvm $argv
 end
