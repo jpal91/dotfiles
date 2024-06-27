@@ -7,7 +7,7 @@ set -x EDITOR nvim
 # Keybindings
 bind \ck kill-whole-line
 
-fish_add_path -a ~/.local/share/pnpm/
+fish_add_path -a $HOME/.local/share/pnpm/
 
 
 # >>> conda initialize >>>
