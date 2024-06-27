@@ -37,6 +37,7 @@ type = "template"
 
 [nvim.files]
 "nvim/lua" = "~/.config/nvim/lua"
+"nvim/site" = "~/.local/share/nvim/site"
 "nvim/vim_conf" = "~/.config/nvim/vim_conf"
 "nvim/.neoconf.json" = "~/.config/nvim/.neoconf.json"
 "nvim/init.lua" = "~/.config/nvim/init.lua"
