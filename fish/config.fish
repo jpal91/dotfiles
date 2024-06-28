@@ -3,6 +3,7 @@ source ~/.config/fish/functions/defaults.fish
 
 set -x NODE_VERSION (nvm current)
 set -x EDITOR nvim
+set -x PNPM_HOME $HOME/.local/share/pnpm
 
 # Keybindings
 bind \ck kill-whole-line
