@@ -1,7 +1,14 @@
 # Fish Config
 source ~/.config/fish/functions/defaults.fish
+bass source ~/.profile
 
 set -x NODE_VERSION (nvm current)
+if test -x nvm
+    set -x NODE_VERSION (nvm current)
+else
+    set -x NODE_VERSION (node -v)
+end
+
 set -x EDITOR nvim
 set -x PNPM_HOME $HOME/.local/share/pnpm
 

@@ -115,7 +115,7 @@ exit_status() {
 }
 
 if [ "$color_prompt" = yes ]; then
-	PS1='\n┌ $(exit_status) \[\e[38;5;39m\][ \[\e[38;5;196;1m\]\u\[\e[0;38;5;39m\] ] [ \[\e[38;5;40;1m\]ఒ \[\e[22;2;2m\]$(basename $CONDA_DEFAULT_ENV)\[\e[0;38;5;39m\] ] [ \[\e[38;5;208;1m\]\w\[\e[0;38;5;39m\] ]\[\e[0m\] \n└ \[\e[38;5;226m\]λ \[\e[0m\] '
+	PS1='\n┌ $(exit_status) \[\e[38;5;39m\][ \[\e[38;5;196;1m\]\u\[\e[0;38;5;39m\] ] [ \[\e[38;5;40;1m\]ఒ \[\e[22;2;2m\]$(basename "$CONDA_DEFAULT_ENV")\[\e[0;38;5;39m\] ] [ \[\e[38;5;208;1m\]\w\[\e[0;38;5;39m\] ]\[\e[0m\] \n└ \[\e[38;5;226m\]λ \[\e[0m\] '
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -135,3 +135,4 @@ export PATH="~/bin:$PATH"
 export PATH="$PATH:~/.local/bin"
 
 alias justl="just -f local.justfile"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

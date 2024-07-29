@@ -2,3 +2,4 @@
 .dotter/cache
 .dotter/cache.toml
 backups.txt
+Brewfile.lock.json
