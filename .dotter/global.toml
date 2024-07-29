@@ -50,6 +50,11 @@ type = "template"
 target = "~/.config/fish"
 type = "symbolic"
 
+[starship]
+
+[starship.files]
+"starship/config.toml" = "~/.config/starship.toml"
+
 [editor]
 
 [editor.files]
