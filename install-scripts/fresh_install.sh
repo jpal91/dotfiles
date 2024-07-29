@@ -23,6 +23,10 @@ if ! test -f .dotter/local.toml; then
 	exit 1
 else
 	./dotter deploy --force
+
+	if ! test -L $HOME/bin/dotter; then
+		ln -s ~/.dotfiles/dotter.sh ~/bin/dotter
+	fi
 fi
 
 # Install Homebrew
@@ -52,7 +56,7 @@ fi
 if test -z "$(fc-list | 'HackNerd')"; then
 	mkdir ~/.fonts
 	curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
-	unzip Hack.zip -d ~/.fonts
+	unzip Hack.zip -d ~/.fonts/
 	rm Hack.zip
 	fc-cache -f -v
 fi
