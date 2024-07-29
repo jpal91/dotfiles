@@ -1,0 +1,8 @@
+includes = []
+# packages = ["zsh", "bash", "xonsh", "nvim", "fish", "editor", "fd", "aliases"]
+
+[files]
+# "dotter.sh" = "~/bin/dotter"
+
+[variables]
+# open_ai_key =
