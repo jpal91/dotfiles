@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
+rm ~/.dotfiles/fish/functions/*bass* ~/.dotfiles/fish/functions/fisher.fish
 
 # Fish Shell Additional Setup
 # Install Fisher

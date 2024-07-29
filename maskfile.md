@@ -56,13 +56,14 @@ fi
 > Same as `anon` but does it for the entire directory
 
 **OPTIONS**
-* dir
-  * flags: -d --dir
-  * type: string
-  * desc: Alternate location of directory, defaults to pwd
-* preview
-  * flags: -p --preview
-  * desc: Pass preview as an argument to sd which will not make changes to the associated files
+
+- dir
+  - flags: -d --dir
+  - type: string
+  - desc: Alternate location of directory, defaults to pwd
+- preview
+  - flags: -p --preview
+  - desc: Pass preview as an argument to sd which will not make changes to the associated files
 
 ```bash
 if ! test -x $(which sd) || ! test -x $(which fd); then
@@ -96,7 +97,7 @@ fd --type directory \
 
 ## take (dir)
 
-> Short for `mkdir && cd`. Can be used with `git` and `tar` packages as well 
+> Short for `mkdir && cd`. Can be used with `git` and `tar` packages as well
 
 ```bash
 if [[ $dir =~ ^(https?|ftp).*\.(tar\.(gz|bz2|xz)|tgz)$ ]]; then
@@ -120,7 +121,7 @@ tar xf "$data"
 thedir="$(tar tf "$data" | head -n 1)"
 rm "$data"
 cd "$thedir"
- ```
+```
 
 ## takegit (url)
 
@@ -147,3 +148,16 @@ mkdir -p $dir && cd $dir
 echo "$file" >> .git/info/exclude
 ```
 
+## realtek-driver
+
+> Installs the 8852BE Realtek driver
+
+```bash
+#Turn off your Security Boot in BIOS
+
+git clone https://github.com/HRex39/rtl8852be.git
+cd rtl8852be
+make -j8
+sudo make install
+sudo modprobe 8852be
+```

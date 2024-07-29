@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
-# Work in progress of a fresh install script
+
+# Create local project and bin directories
+mkdir $HOME/bin
+mkdir $HOME/dev
 
 # Install Rust
 if test ! $(which cargo); then
@@ -11,25 +14,25 @@ fi
 # Install dotter
 if ! test -f ./dotter; then
 	cargo install dotter && mv "$HOME/.cargo/bin/dotter" ./dotter
-	chmod +x dotter
 fi
 
 # Deploy dotfiles
 if ! test -f .dotter/local.toml; then
+	cp .dotter/example_local.toml .dotter/local.toml
 	echo "Need to set local.toml variables first"
 	exit 1
 else
-	./dotter deploy
+	./dotter deploy --force
 fi
 
 # Install Homebrew
 if test ! $(which brew); then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
-		echo 'eval "$($(brew --prefix)/bin/brew shellenv)"' >>"$HOME/.profile"
+		echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>"$HOME/.profile"
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+	brew update
 fi
-
-brew update
 
 # Install dependencies
 brew tap homebrew/bundle
@@ -40,9 +43,16 @@ if test $(which npm); then
 	npm install -g pnpm
 fi
 
-# Create local project and bin directories
-mkdir $HOME/bin
-mkdir $HOME/dev
+# Install NVM
+if test ! $(which nvm); then
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+fi
 
-# Finish Fish dependencies
-. ./setup.fish
+# Install fonts
+if test -z "$(fc-list | 'HackNerd')"; then
+	mkdir ~/.fonts
+	curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
+	unzip Hack.zip -d ~/.fonts
+	rm Hack.zip
+	fc-cache -f -v
+fi
