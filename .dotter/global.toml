@@ -69,3 +69,10 @@ fdignore = "~/.config/fd/ignore"
 
 [aliases.files]
 "global_aliases.sh" = "~/.global_aliases"
+
+[zed]
+
+[zed.files]
+"zed/settings.json" = "~/.config/zed/settings.json"
+"zed/keymap.json" = "~/.config/zed/keymap.json"
+"zed/tasks.json" = "~/.config/zed/tasks.json"

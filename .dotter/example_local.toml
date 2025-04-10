@@ -1,5 +1,16 @@
 includes = []
-# packages = ["zsh", "bash", "xonsh", "nvim", "fish", "editor", "fd", "aliases"]
+# packages = [
+#   "zsh",
+#   "bash",
+#   "xonsh",
+#   "nvim",
+#   "fish",
+#   "editor",
+#   "fd",
+#   "aliases",
+#   "starship",
+#   "zed"
+# ]
 
 [files]
 # "dotter.sh" = "~/bin/dotter"

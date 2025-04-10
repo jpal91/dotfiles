@@ -1,0 +1,72 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Terminal",
+    "bindings": {
+      "z z": "workspace::ToggleZoom",
+      "j k": "workspace::ActivatePaneUp",
+      "j c": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      "n": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || vim_mode == normal || vim_mode == operator || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
+    "bindings": {
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "space": ["workspace::SendKeystrokes", "LEADER"],
+      "LEADER b d": "pane::CloseActiveItem",
+      "LEADER b D": ["pane::CloseActiveItem", { "save_intent": "skip" }],
+      "LEADER b o": ["pane::CloseInactiveItems", { "save_intent": "save_all" }],
+      "LEADER b r": ["pane::CloseItemsToTheRight", { "close_pinned": false }],
+      "LEADER b l": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
+      "LEADER b a": ["pane::CloseAllItems", { "save_intent": "save_all" }],
+      "LEADER g g": [
+        "task::Spawn",
+        { "task_name": "lazygit", "reveal_target": "center" }
+      ],
+      "LEADER t o": "workspace::ToggleBottomDock",
+      "LEADER k m": "zed::OpenKeymap",
+      "LEADER k c": "debug::OpenKeyContextView",
+      "LEADER s r": "pane::SplitRight",
+      "LEADER r e": "editor::ExpandMacroRecursively",
+      "LEADER d n": "editor::GoToDiagnostic"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "shift-d": "project_panel::Delete",
+      "r": "project_panel::Rename"
+    }
+  }
+]

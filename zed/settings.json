@@ -1,0 +1,108 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "show_edit_predictions": false,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "icon_theme": "VSCode Icons (Dark)",
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "buffer_font_family": "Hack Nerd Font",
+  "terminal": {
+    "line_height": "standard",
+    "shell": {
+      "program": "fish"
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Fleet Dark"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "languages": {
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "Astro": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}",
+            "--plugin",
+            "prettier-plugin-astro"
+          ]
+        }
+      }
+    },
+    "SQL": {
+      "formatter": null
+    },
+    "Python": {
+      "language_servers": ["basedpyright", "ruff", "!pylsp", "!pyright", "..."],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "ruff": {
+      "initilization_options": {
+        "settings": {
+          "lineLength": 80,
+          "lint": {
+            "extendSelect": ["I"]
+          }
+        }
+      },
+      "binary": {
+        "arguments": ["server", "--preview"]
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
+  }
+}
