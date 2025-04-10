@@ -2,8 +2,8 @@
 set -e
 
 # Create local project and bin directories
-mkdir "$HOME/bin"
-mkdir "$HOME/dev"
+mkdir "$HOME/bin" >/dev/null 2>&1 || echo "bin created"
+mkdir "$HOME/dev" >/dev/null 2>&1 || echo "dev created"
 
 # Install Rust
 if test ! "$(which cargo)"; then
@@ -39,17 +39,18 @@ else
 fi
 
 # Install dependencies
-brew tap homebrew/bundle
 brew bundle --file ./Brewfile
-
-# Install pnpm globally
-if test "$(which npm)"; then
-	npm install -g pnpm
-fi
 
 # Install NVM
 if test ! "$(which nvm)"; then
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+	. ~/.bashrc
+	nvm install npm
+fi
+
+# Install pnpm globally
+if test "$(which npm)" && test ! "$(which pnpm)"; then
+	npm install -g pnpm
 fi
 
 # Install fonts
@@ -63,5 +64,5 @@ fi
 
 # Install Zed
 if test ! "$(which zed)"; then
-    curl -f https://zed.dev/install.sh | sh
+	curl -f https://zed.dev/install.sh | sh
 fi

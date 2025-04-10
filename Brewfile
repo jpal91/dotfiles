@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "supabase/tap"
 brew "bat"
 brew "chezmoi"

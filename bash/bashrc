@@ -136,3 +136,4 @@ export PATH="$PATH:~/.local/bin"
 
 alias justl="just -f local.justfile"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=$HOME/.local/bin:$PATH
