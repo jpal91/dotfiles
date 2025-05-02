@@ -161,3 +161,11 @@ make -j8
 sudo make install
 sudo modprobe 8852be
 ```
+
+## update-brew
+
+> Updates the Brewfile
+
+```bash
+brew bundle dump --file=~/.dotfiles/Brewfile -f
+```
