@@ -12,7 +12,8 @@
     "edit_prediction_provider": "zed"
   },
   "icon_theme": "VSCode Icons (Dark)",
-  "assistant": {
+  "agent": {
+    "default_profile": "minimal",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
