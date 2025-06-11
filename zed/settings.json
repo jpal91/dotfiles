@@ -13,10 +13,10 @@
   },
   "icon_theme": "VSCode Icons (Dark)",
   "agent": {
-    "default_profile": "minimal",
+    "default_profile": "ask",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-thinking"
     },
     "version": "2"
   },

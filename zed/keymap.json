@@ -23,7 +23,7 @@
   {
     "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || vim_mode == normal || vim_mode == operator || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
     "bindings": {
-      "shift-h": "pane::ActivatePrevItem",
+      "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -42,7 +42,6 @@
       ],
       "LEADER t o": "workspace::ToggleBottomDock",
       "LEADER k m": "zed::OpenKeymap",
-      "LEADER k c": "debug::OpenKeyContextView",
       "LEADER s r": "pane::SplitRight",
       "LEADER r e": "editor::ExpandMacroRecursively",
       "LEADER d n": "editor::GoToDiagnostic"
