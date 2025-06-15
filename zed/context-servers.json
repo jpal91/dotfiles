@@ -1,0 +1,17 @@
+{
+  "context_servers": {
+    "aws-docs": {
+      "command": {
+        "path": "aws-docs",
+        "args": []
+      },
+      "settings": {}
+    },
+    "terraform": {
+      "command": {
+        "path": "docker",
+        "args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
+      }
+    }
+  }
+}
