@@ -13,12 +13,15 @@
   },
   "icon_theme": "VSCode Icons (Dark)",
   "agent": {
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
+    },
     "default_profile": "ask",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-thinking"
-    },
-    "version": "2"
+      "provider": "deepseek",
+      "model": "deepseek-reasoner"
+    }
   },
   "vim_mode": true,
   "ui_font_size": 16,
@@ -53,13 +56,8 @@
     "Astro": {
       "formatter": {
         "external": {
-          "command": "prettier",
-          "arguments": [
-            "--stdin-filepath",
-            "{buffer_path}",
-            "--plugin",
-            "prettier-plugin-astro"
-          ]
+          "command": "zed-prettier",
+          "arguments": ["{buffer_path}"]
         }
       }
     },
@@ -102,6 +100,34 @@
       "initialization_options": {
         "check": {
           "command": "clippy"
+        }
+      }
+    },
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "none",
+              "suppressWhenArgumentMatchesName": false
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false,
+              "suppressWhenTypeMatchesName": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "enumMemberValues": {
+              "enabled": false
+            }
+          }
         }
       }
     }
