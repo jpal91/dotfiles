@@ -13,9 +13,24 @@
   },
   "icon_theme": "VSCode Icons (Dark)",
   "agent": {
-    "inline_assistant_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "contents": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true
+      }
     },
     "default_profile": "ask",
     "default_model": {
@@ -65,7 +80,15 @@
       "formatter": null
     },
     "Python": {
-      "language_servers": ["basedpyright", "ruff", "!pylsp", "!pyright", "..."],
+      "language_servers": [
+        "pyrefly",
+        "ruff",
+        "!basedpyright",
+        "!pylsp",
+        "!pyright",
+        "!prettier",
+        "..."
+      ],
       "format_on_save": "on",
       "formatter": [
         {
@@ -93,6 +116,7 @@
         }
       },
       "binary": {
+        "path": "/home/linuxbrew/.linuxbrew/bin/ruff",
         "arguments": ["server", "--preview"]
       }
     },
