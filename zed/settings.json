@@ -32,7 +32,7 @@
         "enable_all_context_servers": true
       }
     },
-    "default_profile": "ask",
+    "default_profile": "minimal",
     "default_model": {
       "provider": "deepseek",
       "model": "deepseek-reasoner"
@@ -80,15 +80,7 @@
       "formatter": null
     },
     "Python": {
-      "language_servers": [
-        "pyrefly",
-        "ruff",
-        "!basedpyright",
-        "!pylsp",
-        "!pyright",
-        "!prettier",
-        "..."
-      ],
+      "language_servers": ["basedpyright", "jedi-language-server", "ruff"],
       "format_on_save": "on",
       "formatter": [
         {
@@ -106,6 +98,11 @@
     }
   },
   "lsp": {
+    "jedi-language-server": {
+      "binary": {
+        "path": "/home/jpal/.local/bin/jedi-language-server"
+      }
+    },
     "ruff": {
       "initilization_options": {
         "settings": {
@@ -124,6 +121,13 @@
       "initialization_options": {
         "check": {
           "command": "clippy"
+        }
+      }
+    },
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "typeCheckingMode": "basic"
         }
       }
     },
