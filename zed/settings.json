@@ -7,36 +7,92 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "show_edit_predictions": false,
-  "features": {
-    "edit_prediction_provider": "zed"
+  "prettier": {
+    "allowed": false
   },
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "agent_buffer_font_size": 8.0,
+  "agent_ui_font_size": 10.0,
+  "show_edit_predictions": false,
   "icon_theme": "VSCode Icons (Dark)",
   "agent": {
     "profiles": {
-      "ask": {
-        "name": "Ask",
+      "write": {
+        "name": "Write",
         "tools": {
-          "contents": true,
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
           "diagnostics": true,
+          "edit_file": true,
           "fetch": true,
           "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
           "now": true,
           "find_path": true,
           "read_file": true,
+          "restore_file_from_disk": true,
+          "save_file": true,
           "open": true,
           "grep": true,
+          "spawn_agent": true,
+          "terminal": true,
           "thinking": true,
           "web_search": true
         },
-        "enable_all_context_servers": true
+        "enable_all_context_servers": true,
+        "context_servers": {
+          "ddg-search": {
+            "tools": {
+              "search": true
+            }
+          }
+        }
+      },
+      "minimal": {
+        "context_servers": {
+          "godot-doc-mcp": {
+            "tools": {
+              "godot_search": true,
+              "godot_get_symbol": true,
+              "godot_list_classes": true,
+              "godot_get_class": true
+            }
+          },
+          "ddg-search": {
+            "tools": {
+              "search": true,
+              "fetch_content": true
+            }
+          }
+        },
+        "name": "Minimal",
+        "tools": {},
+        "enable_all_context_servers": false,
       }
     },
+    "favorite_models": [
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "enable_thinking": false
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "enable_thinking": false
+      }
+    ],
     "default_profile": "minimal",
     "default_model": {
-      "provider": "deepseek",
-      "model": "deepseek-reasoner"
-    }
+      "enable_thinking": false,
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+    },
+    "model_parameters": [],
   },
   "vim_mode": true,
   "ui_font_size": 10,
@@ -45,91 +101,149 @@
   "terminal": {
     "line_height": "standard",
     "shell": {
-      "program": "fish"
-    }
+      "program": "fish",
+    },
   },
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Ayu Mirage"
+    "dark": "Ayu Mirage",
   },
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
     "show_parameter_hints": true,
-    "show_other_hints": true
+    "show_other_hints": true,
   },
   "languages": {
     "TypeScript": {
       "formatter": {
         "external": {
           "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ],
+        },
+      },
     },
     "Astro": {
       "formatter": {
         "external": {
           "command": "zed-prettier",
-          "arguments": ["{buffer_path}"]
-        }
-      }
+          "arguments": [
+            "{buffer_path}"
+          ],
+        },
+      },
     },
     "SQL": {
-      "formatter": null
+      "formatter": null,
     },
     "Python": {
-      "language_servers": ["basedpyright", "jedi-language-server", "ruff"],
+      "language_servers": [
+        "basedpyright-alt",
+        "ruff",
+        "!basedpyright",
+        "!pyrefly",
+        "!ty",
+        "!pylsp",
+        "!prettier",
+      ],
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff",
+        },
+        {
+          "code_action": "source.fixAll.ruff",
         },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
+            "name": "ruff",
+          },
+        },
+      ],
+    },
   },
   "lsp": {
     "jedi-language-server": {
       "binary": {
-        "path": "/home/jpal/.local/bin/jedi-language-server"
-      }
+        "path": "/home/jpal/.local/bin/jedi-language-server",
+        "arguments": [
+          "-vv"
+        ],
+      },
+      "initialization_options": {
+        "workspace": {
+          "symbols": {
+            "maxSymbols": 20,
+          },
+        },
+      },
+      "settings": {
+        "initializationOptions": {
+          "hover": {
+            "enable": false,
+          },
+        },
+      },
+    },
+    "ty": {
+      "settings": {
+        "ty": {
+          "experimental": {
+            "autoImport": true,
+          },
+        },
+      },
+    },
+    "pyrefly": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python",
+        },
+        "pyrefly": {
+          "python_interpreter": ".venv/bin/python",
+        },
+      },
     },
     "ruff": {
       "initilization_options": {
         "settings": {
           "lineLength": 80,
           "lint": {
-            "extendSelect": ["I"]
-          }
-        }
+            "extendSelect": [
+              "I"
+            ],
+          },
+        },
       },
       "binary": {
         "path": "/home/linuxbrew/.linuxbrew/bin/ruff",
-        "arguments": ["server", "--preview"]
-      }
+        "arguments": [
+          "server",
+          "--preview"
+        ],
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
-        }
-      }
+          "command": "clippy",
+        },
+      },
     },
-    "basedpyright": {
+    "basedpyright-alt": {
       "settings": {
         "basedpyright.analysis": {
-          "typeCheckingMode": "basic"
-        }
-      }
+          "typeCheckingMode": "basic",
+          "diagnosticMode": "workspace",
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python",
+        },
+      },
     },
     "vtsls": {
       "settings": {
@@ -137,27 +251,27 @@
           "inlayHints": {
             "parameterNames": {
               "enabled": "none",
-              "suppressWhenArgumentMatchesName": false
+              "suppressWhenArgumentMatchesName": false,
             },
             "parameterTypes": {
-              "enabled": false
+              "enabled": false,
             },
             "variableTypes": {
               "enabled": false,
-              "suppressWhenTypeMatchesName": false
+              "suppressWhenTypeMatchesName": false,
             },
             "propertyDeclarationTypes": {
-              "enabled": false
+              "enabled": false,
             },
             "functionLikeReturnTypes": {
-              "enabled": false
+              "enabled": false,
             },
             "enumMemberValues": {
-              "enabled": false
-            }
-          }
-        }
-      }
-    }
-  }
+              "enabled": false,
+            },
+          },
+        },
+      },
+    },
+  },
 }
