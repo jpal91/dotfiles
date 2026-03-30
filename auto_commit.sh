@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# Add to cronjob
+# 0 * * * * DOTFILES_DIR="..." /path/to/dotfiles/auto_commit.sh
+
 # Define the directory where your dotfiles are located
-# DOTFILES_DIR="~/.dotfiles"
 cd "$DOTFILES_DIR" || { echo "Directory not found"; exit 1; }
 
 # Check for uncommitted changes
