@@ -1,7 +1,8 @@
-{% macro to_pascal_case(words) -%}
-    {% set output = "" %}
-    {% for word in words.split(" ") %}
-        {% set output = output + word.capitalize() %}
-    {% endfor %}
-    {{ output }}
+{% macro to_pascal_case(input) -%}
+    {% set words = input|regex_replace("(_|-)", " ") -%}
+    {% set words = words.split(' ') -%}
+    {% set output = "" -%}
+    {% for word in words -%}
+        {{ word|capitalize }}
+    {%- endfor %}
 {%- endmacro %}

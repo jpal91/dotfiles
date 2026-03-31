@@ -1,7 +1,7 @@
-{% from 'casing.jinja' import to_pascal_case %}
+{% from 'casing.jinja' import to_pascal_case -%}
 use godot::prelude::*;
 
-struct {{ to_pascal_case(project_name|regex_replace("(_|-)", " ")) }};
+struct {{ to_pascal_case(project_name) }}Ext;
 
 #[gdextension]
-unsafe impl ExtensionLibrary for {{ project_name|regex_replace("(_|-)", " ") }}Ext {}
+unsafe impl ExtensionLibrary for {{ to_pascal_case(project_name) }}Ext {}
