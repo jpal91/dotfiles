@@ -88,9 +88,9 @@
     ],
     "default_profile": "minimal",
     "default_model": {
-      "enable_thinking": false,
+      "enable_thinking": true,
       "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "model": "gemini-3.1-pro-preview",
     },
     "model_parameters": [],
   },
