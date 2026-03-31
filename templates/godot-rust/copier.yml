@@ -1,1 +1,11 @@
+project_name:
+  type: str
+  question: What is the project name?
 
+_tasks:
+  command: "cargo add godot --features experimental-godot-api"
+  when: "{{ _copier_operation == 'copy' }}"
+  working_directory: "{{ _copier_conf.dst_path }}/rust"
+
+_exclude:
+   - casing

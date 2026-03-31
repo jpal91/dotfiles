@@ -1,0 +1,7 @@
+{% macro to_pascal_case(words) -%}
+    {% set output = "" %}
+    {% for word in words.split(" ") %}
+        {% set output = output + word.capitalize() %}
+    {% endfor %}
+    {{ output }}
+{%- endmacro %}
