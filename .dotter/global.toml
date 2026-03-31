@@ -77,9 +77,3 @@ fdignore = "~/.config/fd/ignore"
 "zed/settings.json" = "~/.config/zed/settings.json"
 "zed/keymap.json" = "~/.config/zed/keymap.json"
 "zed/tasks.json" = "~/.config/zed/tasks.json"
-
-[templates]
-
-[templates.files]
-"templates/godot-rust" = "~/.templates/godot-rust"
-"templates/casing.jinja" = "~/.templates/godot-rust/casing.jinja"

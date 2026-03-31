@@ -5,14 +5,14 @@ compatibility_minimum = 4.3
 reloadable = false
 
 [libraries]
-linux.debug.x86_64 =     "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}_lib.so"
-linux.release.x86_64 =   "res://../rust/target/release/lib{{ to_snake_case(project_name) }}_lib.so"
+linux.debug.x86_64 =     "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}.so"
+linux.release.x86_64 =   "res://../rust/target/release/lib{{ to_snake_case(project_name) }}.so"
 windows.debug.x86_64 =   "res://../rust/target/debug/{{ to_snake_case(project_name) }}_lib.dll"
 windows.release.x86_64 = "res://../rust/target/release/{{ to_snake_case(project_name) }}_lib.dll"
-macos.debug =            "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}_lib.dylib"
-macos.release =          "res://../rust/target/release/lib{{ to_snake_case(project_name) }}_lib.dylib"
-macos.debug.arm64 =      "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}_lib.dylib"
-macos.release.arm64 =    "res://../rust/target/release/lib{{ to_snake_case(project_name) }}_lib.dylib"
+macos.debug =            "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}.dylib"
+macos.release =          "res://../rust/target/release/lib{{ to_snake_case(project_name) }}.dylib"
+macos.debug.arm64 =      "res://../rust/target/debug/lib{{ to_snake_case(project_name) }}.dylib"
+macos.release.arm64 =    "res://../rust/target/release/lib{{ to_snake_case(project_name) }}.dylib"
 
 [icons]
 Player = "icon.png"
