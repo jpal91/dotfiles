@@ -1,4 +1,4 @@
-{% from 'casing.jinja' import to_pascal_case -%}
+{% from relpath('../casing.jinja') import to_snake_case -%}
 use godot::prelude::*;
 
 struct {{ to_pascal_case(project_name) }}Ext;

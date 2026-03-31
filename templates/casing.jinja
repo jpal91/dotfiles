@@ -1,0 +1,13 @@
+{% macro to_pascal_case(input) -%}
+    {% set words = input|lower|regex_replace("[^\w\d]", " ") -%}
+    {% set words = words.split(' ') -%}
+    {% for word in words -%}
+        {{ word|capitalize }}
+    {%- endfor %}
+{%- endmacro %}
+
+{% macro to_snake_case(input) -%}
+    {% set words = input|lower|regex_replace("[^\w\d]", " ") -%}
+    {% set words = words.split(' ') -%}
+    {{ words|join('_') }}
+{%- endmacro %}

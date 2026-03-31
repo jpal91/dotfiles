@@ -35,39 +35,22 @@ fi
 /usr/bin/git add -A
 
 # 4. Formulate the commit message
-# We use git diff --cached because the changes are now staged
-CHANGED_FILES=$(git diff --cached --name-only)
-FILE_COUNT=$(echo "$CHANGED_FILES" | wc -l)
+# Get the list of changed files for the message
+CHANGED_FILES=$(/usr/bin/git diff --cached --name-only | tr '\n' ',' | sed 's/,$//' | sed 's/,/, /g')
 
-# If for some reason there are no changes (e.g. after a merge that resulted in no change)
-if [[ $FILE_COUNT -eq 0 ]]; then
-    exit 0
-fi
-
-# Create the detailed commit message
-if [[ $FILE_COUNT -eq 1 ]]; then
-    # Single file - use the filename
-    COMMIT_MSG="Updated $CHANGED_FILES"
-else
-    # Multiple files - create comma-separated list
-    FILE_LIST=$(echo "$CHANGED_FILES" | tr '\n' ',' | sed 's/,$//' | sed 's/,/, /g')
-
-    # Check if the detailed message would be too long (> 50 chars)
-    DETAILED_MSG="Updated $FILE_LIST"
-    if [[ ${#DETAILED_MSG} -le 50 ]]; then
-        COMMIT_MSG="$DETAILED_MSG"
-    else
-        # Use the count-based message instead
-        COMMIT_MSG="Updated $FILE_COUNT files"
-    fi
-fi
-
-# If for some reason CHANGED_FILES is empty (e.g. after a merge that resulted in no change)
+# If the list is empty after the merge/pop, exit
 if [[ -z "$CHANGED_FILES" ]]; then
     exit 0
 fi
 
 COMMIT_MSG="Updated $CHANGED_FILES"
+
+# Check if the message is longer than 50 characters
+if [[ ${#COMMIT_MSG} -gt 50 ]]; then
+    # Count the number of lines (files) in the staged diff
+    FILE_COUNT=$(/usr/bin/git diff --cached --name-only | wc -l | xargs)
+    COMMIT_MSG="Updated $FILE_COUNT files"
+fi
 
 # Commit the changes
 /usr/bin/git commit -m "$COMMIT_MSG"
