@@ -5,7 +5,11 @@ project_name:
 _tasks:
   - command: "cargo add godot --features experimental-godot-api"
     when: "{{ _copier_operation == 'copy' }}"
-    working_directory: "{{ _copier_conf.dst_path }}/rust"
+    working_directory: "{{ project_name }}/rust"
+  - command: "git init && git add -A && git commit -m 'First commit'"
+    when: "{{ _copier_operation == 'copy' }}"
+    working_directory: "{{ project_name }}"
 
 _exclude:
    - casing
+   - copier.yml
