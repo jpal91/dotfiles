@@ -94,7 +94,15 @@
       "provider": "anthropic",
       "model": "claude-sonnet-4-6-latest",
     },
-    "model_parameters": [],
+    "model_parameters": [
+      {
+        "model": "claude-sonnet-4-6-latest",
+        "provider": "anthropic",
+        "cache_control": {
+          "type": "ephemeral"
+        }
+      }
+    ],
   },
   "vim_mode": true,
   "ui_font_size": 10,
