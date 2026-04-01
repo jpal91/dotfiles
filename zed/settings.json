@@ -18,6 +18,7 @@
   "show_edit_predictions": false,
   "icon_theme": "VSCode Icons (Dark)",
   "agent": {
+    "show_turn_stats": true,
     "profiles": {
       "write": {
         "name": "Write",
