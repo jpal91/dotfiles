@@ -99,9 +99,10 @@
     ],
     "default_profile": "minimal",
     "default_model": {
-      "enable_thinking": false,
-      "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
     },
     "model_parameters": [
       {
