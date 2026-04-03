@@ -103,7 +103,7 @@
         "enable_thinking": false
       }
     ],
-    "default_profile": "write",
+    "default_profile": "minimal",
     "default_model": {
       "enable_thinking": true,
       "provider": "google",
