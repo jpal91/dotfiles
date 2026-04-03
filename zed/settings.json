@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "lsp_document_colors": "inlay",
   "prettier": {
     "allowed": false
@@ -98,7 +103,7 @@
         "enable_thinking": false
       }
     ],
-    "default_profile": "minimal",
+    "default_profile": "write",
     "default_model": {
       "enable_thinking": true,
       "provider": "google",
@@ -133,7 +138,8 @@
     "Ultimate Dark Neo": {
       "syntax": {
         "hint": {
-          "color": "#F2B944CF"
+          // "color": "#ECC2857A"
+          "color": "#C8B3C978"
         }
       }
     }
