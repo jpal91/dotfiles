@@ -16,7 +16,7 @@
   "agent_buffer_font_size": 8.0,
   "agent_ui_font_size": 10.0,
   "show_edit_predictions": false,
-  "icon_theme": "VSCode Icons (Dark)",
+  "icon_theme": "Catppuccin Latte",
   "agent": {
     "show_turn_stats": true,
     "profiles": {
@@ -126,7 +126,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Ayu Mirage",
+    "dark": "Ultimate Dark Neo",
   },
   "inlay_hints": {
     "enabled": true,
