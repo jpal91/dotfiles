@@ -66,3 +66,12 @@ fi
 if test ! "$(which zed)"; then
 	curl -f https://zed.dev/install.sh | sh
 fi
+
+# Add cheats repository
+if ! test -d ~/dev/cheats; then
+    git clone https://github.com/jpal91/cheats ~/dev/cheats
+
+    if ! test -d ~/.local/share/navi/cheats; then
+        ln -s "$HOME/dev/cheats" "$HOME/.local/share/navi/cheats"
+    fi
+fi
