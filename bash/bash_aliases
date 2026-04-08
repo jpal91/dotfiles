@@ -22,7 +22,7 @@ fi
 # alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 #
 # # Alias for Navi Terminal App to search for commands and add to history instead of executing
-# alias navi='history -s $(/home/linuxbrew/.linuxbrew/bin/navi --print)'
+alias navi='navi --print'
 #
 # alias docker-desktop='/opt/docker-desktop/bin/docker-desktop'
 
