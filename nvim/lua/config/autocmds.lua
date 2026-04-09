@@ -16,7 +16,7 @@ autocmd("VimEnter", {
       return
     end
 
-    local maybe_dir = vim.fn.fnamemodify(arg, ":p")
+    local maybe_dir = vim.fs.normalize(vim.fs.abspath(arg))
     local stat = vim.loop.fs_stat(maybe_dir)
 
     if stat and stat.type == "directory" then
@@ -26,7 +26,7 @@ autocmd("VimEnter", {
         reveal_force_cwd = true,
       })
     else
-      local path = vim.fn.fnamemodify(maybe_dir, ":h")
+      local path = vim.fn.fnamemodify(maybe_dir, ":p")
       require("neo-tree.command").execute({
          action = "show",
          reveal_file = path,
