@@ -121,6 +121,13 @@
         "cache_control": {
           "type": "ephemeral"
         }
+      },
+      {
+        "model": "z-ai/glm-5.1",
+        "provider": "openrouter",
+        "cache_control": {
+          "type": "ephemeral"
+        }
       }
     ],
   },
