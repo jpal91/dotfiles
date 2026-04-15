@@ -29,6 +29,7 @@
       "write": {
         "name": "Write",
         "tools": {
+          "search_web": true,
           "copy_path": true,
           "create_directory": true,
           "delete_path": true,
@@ -47,8 +48,7 @@
           "grep": true,
           "spawn_agent": true,
           "terminal": true,
-          "thinking": true,
-          "web_search": true
+          "thinking": true
         },
         "enable_all_context_servers": true,
         "context_servers": {
@@ -101,13 +101,18 @@
         "provider": "anthropic",
         "model": "claude-sonnet-4-6-latest",
         "enable_thinking": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "z-ai/glm-5.1",
+        "enable_thinking": false
       }
     ],
     "default_profile": "minimal",
     "default_model": {
       "enable_thinking": true,
-      "provider": "google",
-      "model": "gemini-3.1-pro-preview",
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
     },
     "model_parameters": [
       {
