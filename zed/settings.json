@@ -7,6 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -24,6 +36,7 @@
   "show_edit_predictions": false,
   "icon_theme": "Catppuccin Latte",
   "agent": {
+    "dock": "right",
     "show_turn_stats": true,
     "profiles": {
       "write": {
