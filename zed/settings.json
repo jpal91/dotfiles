@@ -232,9 +232,9 @@
     },
     "Python": {
       "language_servers": [
-        "ty",
+        "basedpyright-alt",
         "ruff",
-        "!basedpyright-alt",
+        "!ty",
         "!basedpyright",
         "!pyrefly",
         "!pylsp",
