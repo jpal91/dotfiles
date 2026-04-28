@@ -124,13 +124,18 @@
         "provider": "openrouter",
         "model": "z-ai/glm-5.1",
         "enable_thinking": true
+      },
+      {
+        "provider": "deepseek",
+        "model": "deepseek-v4-pro",
+        "enable_thinking": true
       }
     ],
     "default_profile": "write",
     "default_model": {
       "enable_thinking": false,
       "provider": "deepseek",
-      "model": "deepseek-reasoner",
+      "model": "deepseek-v4-pro",
     },
     "model_parameters": [
       {
@@ -148,6 +153,25 @@
         }
       }
     ],
+  },
+  "language_models": {
+    "deepseek": {
+      "api_url": "https://api.deepseek.com",
+      "available_models": [
+        {
+          "name": "deepseek-v4-flash",
+          "display_name": "DeepSeek V4 Flash",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000,
+        },
+        {
+          "name": "deepseek-v4-pro",
+          "display_name": "DeepSeek V4 Pro",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000
+        }
+      ]
+    }
   },
   "vim_mode": true,
   "ui_font_size": 10,
@@ -208,11 +232,11 @@
     },
     "Python": {
       "language_servers": [
-        "basedpyright-alt",
+        "ty",
         "ruff",
+        "!basedpyright-alt",
         "!basedpyright",
         "!pyrefly",
-        "!ty",
         "!pylsp",
         "!prettier",
       ],
