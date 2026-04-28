@@ -77,3 +77,8 @@ fdignore = "~/.config/fd/ignore"
 "zed/settings.json" = "~/.config/zed/settings.json"
 "zed/keymap.json" = "~/.config/zed/keymap.json"
 "zed/tasks.json" = "~/.config/zed/tasks.json"
+
+[bin]
+
+[bin.files]
+"bin/gh-single.fish" = "~/bin/gh-single"

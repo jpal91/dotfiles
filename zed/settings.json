@@ -118,14 +118,14 @@
       {
         "provider": "openrouter",
         "model": "z-ai/glm-5.1",
-        "enable_thinking": false
+        "enable_thinking": true
       }
     ],
-    "default_profile": "minimal",
+    "default_profile": "write",
     "default_model": {
-      "enable_thinking": true,
-      "provider": "openrouter",
-      "model": "z-ai/glm-5.1",
+      "enable_thinking": false,
+      "provider": "deepseek",
+      "model": "deepseek-reasoner",
     },
     "model_parameters": [
       {
