@@ -135,9 +135,9 @@
     ],
     "default_profile": "write",
     "default_model": {
-      "enable_thinking": false,
-      "provider": "deepseek",
-      "model": "deepseek-v4-pro",
+      "enable_thinking": true,
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
     },
     "model_parameters": [
       {
