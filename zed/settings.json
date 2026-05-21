@@ -125,7 +125,7 @@
       {
         "provider": "openrouter",
         "model": "z-ai/glm-5.1",
-        "enable_thinking": true
+        "enable_thinking": false
       },
       {
         "provider": "deepseek",
@@ -133,11 +133,11 @@
         "enable_thinking": true
       }
     ],
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "z-ai/glm-5.1",
+      "model": "~google/gemini-pro-latest",
     },
     "model_parameters": [
       {
