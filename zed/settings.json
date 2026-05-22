@@ -137,7 +137,7 @@
     "default_model": {
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "z-ai/glm-5.1",
+      "model": "google/gemini-3.1-pro-preview",
     },
     "model_parameters": [
       {
