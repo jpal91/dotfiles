@@ -143,7 +143,7 @@
         "enable_thinking": true
       }
     ],
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "enable_thinking": false,
       "provider": "deepseek",
