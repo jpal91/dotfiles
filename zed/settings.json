@@ -131,13 +131,23 @@
         "provider": "deepseek",
         "model": "deepseek-v4-pro",
         "enable_thinking": true
+      },
+      {
+        "provider": "openrouter",
+        "model": "google/gemini-3.1-flash-lite",
+        "enable_thinking": true
+      },
+      {
+        "provider": "openrouter",
+        "model": "google/gemini-3.1-pro-preview",
+        "enable_thinking": true
       }
     ],
-    "default_profile": "minimal",
+    "default_profile": "ask",
     "default_model": {
-      "enable_thinking": true,
-      "provider": "openrouter",
-      "model": "z-ai/glm-5.1",
+      "enable_thinking": false,
+      "provider": "deepseek",
+      "model": "deepseek-v4-pro",
     },
     "model_parameters": [
       {
