@@ -113,7 +113,7 @@
     "bindings": {
       "LEADER c c": [
         "workspace::SendKeystrokes",
-        "i # % % Enter"
+        "i # Space % % Enter"
       ]
     }
   },
