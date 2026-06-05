@@ -144,11 +144,11 @@
         "enable_thinking": true
       }
     ],
-    "default_profile": "write",
+    "default_profile": "minimal",
     "default_model": {
-      "enable_thinking": false,
-      "provider": "deepseek",
-      "model": "deepseek-v4-pro",
+      "enable_thinking": true,
+      "provider": "openrouter",
+      "model": "~anthropic/claude-sonnet-latest",
     },
     "model_parameters": [
       {
