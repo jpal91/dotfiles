@@ -2,11 +2,11 @@
 set -e
 
 # Create local project and bin directories
-mkdir "$HOME/bin" >/dev/null 2>&1 || echo "bin created"
-mkdir "$HOME/dev" >/dev/null 2>&1 || echo "dev created"
+mkdir -p "$HOME/bin"
+mkdir -p "$HOME/dev"
 
 # Install Rust
-if test ! "$(which cargo)"; then
+if ! command -v cargo > /dev/null 2>&1; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 	. "$HOME/.cargo/env"
 fi
@@ -30,10 +30,13 @@ else
 fi
 
 # Install Homebrew
-if test ! "$(which brew)"; then
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
-		echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>"$HOME/.profile"
+if ! command -v brew > /dev/null 2>&1; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+	if ! grep -qs 'brew shellenv' "$HOME/.profile"; then
+	    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.profile"
+	fi
 else
 	brew update
 fi
@@ -42,28 +45,28 @@ fi
 brew bundle --file ./Brewfile
 
 # Install NVM
-if test ! "$(which nvm)"; then
+if ! command -v nvm > /dev/null 2>&1 && [ -z "$NVM_DIR" ]; then
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-	. ~/.bashrc
-	nvm install npm
+	. "$NVM_DIR/nvm.sh"
+	nvm install --lts
 fi
 
 # Install pnpm globally
-if test "$(which npm)" && test ! "$(which pnpm)"; then
+if command -v npm > /dev/null 2>&1 && ! command -v pnpm > /dev/null 2>&1; then
 	npm install -g pnpm
 fi
 
 # Install fonts
-if test -z "$(fc-list | 'HackNerd')"; then
-	mkdir ~/.fonts
+if ! fc-list | grep -q 'HackNerd'; then
+	mkdir "$HOME/.fonts"
 	curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
-	unzip Hack.zip -d ~/.fonts/
+	unzip Hack.zip -d "$HOME/.fonts/"
 	rm Hack.zip
 	fc-cache -f -v
 fi
 
 # Install Zed
-if test ! "$(which zed)"; then
+if ! command -v zed > /dev/null 2>&1; then
 	curl -f https://zed.dev/install.sh | sh
 fi
 
