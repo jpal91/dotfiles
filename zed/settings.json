@@ -197,9 +197,9 @@
     },
   },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "Ultimate Dark Neo",
+    "dark": "One Dark",
   },
   "theme_overrides": {
     "Ultimate Dark Neo": {

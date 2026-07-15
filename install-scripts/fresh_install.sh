@@ -42,7 +42,8 @@ else
 fi
 
 # Install dependencies
-brew bundle --file ./Brewfile
+# TODO: Tap trust
+brew bundle -v --file ./Brewfile
 
 # Install NVM
 if ! command -v nvm > /dev/null 2>&1 && [ -z "$NVM_DIR" ]; then
