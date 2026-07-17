@@ -3,7 +3,7 @@ project_name:
   question: What is the project name?
 
 _tasks:
-  - command: "pnpm install"
+  - command: "pnpm add -D typescript tsx @tsconfig/node-lts @types/node"
     when: "{{ _copier_operation == 'copy' }}"
     working_directory: "{{ project_name }}"
 
