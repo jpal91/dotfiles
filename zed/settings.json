@@ -7,32 +7,33 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "on",
   "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "opencode": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "lsp_document_colors": "inlay",
   "prettier": {
-    "allowed": false
+    "allowed": true,
   },
   "edit_predictions": {
     "provider": "zed",
@@ -67,16 +68,16 @@
           "grep": true,
           "spawn_agent": true,
           "terminal": true,
-          "thinking": true
+          "thinking": true,
         },
         "enable_all_context_servers": true,
         "context_servers": {
           "ddg-search": {
             "tools": {
-              "search": true
-            }
-          }
-        }
+              "search": true,
+            },
+          },
+        },
       },
       "minimal": {
         "context_servers": {
@@ -85,64 +86,64 @@
               "godot_search": true,
               "godot_get_symbol": true,
               "godot_list_classes": true,
-              "godot_get_class": true
-            }
+              "godot_get_class": true,
+            },
           },
           "ddg-search": {
             "tools": {
               "search": true,
-              "fetch_content": true
-            }
-          }
+              "fetch_content": true,
+            },
+          },
         },
         "name": "Minimal",
         "tools": {
-          "fetch": false
+          "fetch": false,
         },
         "enable_all_context_servers": false,
-      }
+      },
     },
     "favorite_models": [
       {
         "provider": "google",
         "model": "gemini-3.1-pro-preview",
-        "enable_thinking": true
+        "enable_thinking": true,
       },
       {
         "provider": "google",
         "model": "gemini-3-flash-preview",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "deepseek",
         "model": "deepseek-reasoner",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "anthropic",
         "model": "claude-sonnet-4-6-latest",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "openrouter",
         "model": "z-ai/glm-5.1",
-        "enable_thinking": true
+        "enable_thinking": true,
       },
       {
         "provider": "deepseek",
         "model": "deepseek-v4-pro",
-        "enable_thinking": true
+        "enable_thinking": true,
       },
       {
         "provider": "openrouter",
         "model": "google/gemini-3.1-flash-lite",
-        "enable_thinking": true
+        "enable_thinking": true,
       },
       {
         "provider": "openrouter",
         "model": "google/gemini-3.1-pro-preview",
-        "enable_thinking": true
-      }
+        "enable_thinking": true,
+      },
     ],
     "default_profile": "ask",
     "default_model": {
@@ -155,16 +156,16 @@
         "model": "claude-sonnet-4-6-latest",
         "provider": "anthropic",
         "cache_control": {
-          "type": "ephemeral"
-        }
+          "type": "ephemeral",
+        },
       },
       {
         "model": "z-ai/glm-5.1",
         "provider": "openrouter",
         "cache_control": {
-          "type": "ephemeral"
-        }
-      }
+          "type": "ephemeral",
+        },
+      },
     ],
   },
   "language_models": {
@@ -181,10 +182,10 @@
           "name": "deepseek-v4-pro",
           "display_name": "DeepSeek V4 Pro",
           "max_tokens": 1000000,
-          "max_output_tokens": 384000
-        }
-      ]
-    }
+          "max_output_tokens": 384000,
+        },
+      ],
+    },
   },
   "vim_mode": true,
   "ui_font_size": 10,
@@ -206,10 +207,10 @@
       "syntax": {
         "hint": {
           // "color": "#ECC2857A"
-          "color": "#C8B3C978"
-        }
-      }
-    }
+          "color": "#C8B3C978",
+        },
+      },
+    },
   },
   "inlay_hints": {
     "show_background": false,
@@ -223,10 +224,7 @@
       "formatter": {
         "external": {
           "command": "prettier",
-          "arguments": [
-            "--stdin-filepath",
-            "{buffer_path}"
-          ],
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
         },
       },
     },
@@ -234,9 +232,7 @@
       "formatter": {
         "external": {
           "command": "zed-prettier",
-          "arguments": [
-            "{buffer_path}"
-          ],
+          "arguments": ["{buffer_path}"],
         },
       },
     },
@@ -268,14 +264,18 @@
         },
       ],
     },
+    "Terraform": {
+      "code_actions_on_format": {
+        "source.formatAll.terraform": true
+      },
+      "formatter": [],
+    },
   },
   "lsp": {
     "jedi-language-server": {
       "binary": {
         "path": "/home/jpal/.local/bin/jedi-language-server",
-        "arguments": [
-          "-vv"
-        ],
+        "arguments": ["-vv"],
       },
       "initialization_options": {
         "workspace": {
@@ -316,18 +316,13 @@
         "settings": {
           "lineLength": 80,
           "lint": {
-            "extendSelect": [
-              "I"
-            ],
+            "extendSelect": ["I"],
           },
         },
       },
       "binary": {
         "path": "/home/linuxbrew/.linuxbrew/bin/ruff",
-        "arguments": [
-          "server",
-          "--preview"
-        ],
+        "arguments": ["server", "--preview"],
       },
     },
     "rust-analyzer": {

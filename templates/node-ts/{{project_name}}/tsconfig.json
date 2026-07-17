@@ -1,0 +1,8 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "extends": "@tsconfig/node-lts/tsconfig.json",
+    "rootDir": "./src",
+    "types": ["node"],
+  },
+}

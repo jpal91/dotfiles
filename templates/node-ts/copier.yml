@@ -1,0 +1,11 @@
+project_name:
+  type: str
+  question: What is the project name?
+
+_tasks:
+  - command: "pnpm install"
+    when: "{{ _copier_operation == 'copy' }}"
+    working_directory: "{{ project_name }}"
+
+_exclude:
+  - copier.yml
