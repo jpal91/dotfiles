@@ -41,3 +41,7 @@ end
 # function nvm
 #     bass source ~/.nvm/nvm.sh -- no-use ';' nvm $argv
 # end
+
+function mux
+    mosh $argv[1] -- tmux new -A -s main
+end
