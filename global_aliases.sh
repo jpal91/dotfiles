@@ -30,3 +30,5 @@ alias dotfiles='cd ~/.dotfiles/'
 alias msk='mask --maskfile ~/.dotfiles/maskfile.md'
 
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
+
+alias mux='mosh $1 -- tmux new -A -s main'
