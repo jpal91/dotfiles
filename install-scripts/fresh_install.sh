@@ -54,7 +54,7 @@ fi
 
 # Install pnpm globally
 if command -v npm > /dev/null 2>&1 && ! command -v pnpm > /dev/null 2>&1; then
-	npm install -g pnpm
+	curl -fsSL https://get.pnpm.io/install.sh | sh -
 fi
 
 # Install fonts

@@ -10,12 +10,12 @@ else
 end
 
 set -x EDITOR nvim
-set -x PNPM_HOME $HOME/.local/share/pnpm
+set -x PNPM_HOME $HOME/.local/share/pnpm/bin
 
 # Keybindings
 bind \ck kill-whole-line
 
-fish_add_path -a $HOME/.local/share/pnpm/
+fish_add_path -a $PNPM_HOME
 
 
 # >>> conda initialize >>>
