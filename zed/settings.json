@@ -12,8 +12,23 @@
   "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "opencode": {
-      "type": "registry",
-    },
+      "default_config_options": {
+        "mode": "plan",
+        "effort": "default",
+        "model": "anthropic/claude-sonnet-5-5"
+      },
+      "favorite_config_option_values": {
+        "model": [
+          "openrouter/deepseek/deepseek-v4.1-flash",
+          "anthropic/claude-sonnet-5-5"
+        ]
+      },
+      "type": "custom",
+      "command": "opencode",
+      "args": [
+        "acp"
+      ],
+    }
   },
   "project_panel": {
     "dock": "left",
@@ -39,8 +54,8 @@
   "edit_predictions": {
     "provider": "zed",
   },
-  "agent_buffer_font_size": 8.0,
-  "agent_ui_font_size": 10.0,
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 15.0,
   "show_edit_predictions": false,
   "icon_theme": "Catppuccin Latte",
   "agent": {
@@ -225,7 +240,10 @@
       "formatter": {
         "external": {
           "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"],
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ],
         },
       },
     },
@@ -233,7 +251,9 @@
       "formatter": {
         "external": {
           "command": "zed-prettier",
-          "arguments": ["{buffer_path}"],
+          "arguments": [
+            "{buffer_path}"
+          ],
         },
       },
     },
@@ -276,7 +296,9 @@
     "jedi-language-server": {
       "binary": {
         "path": "/home/jpal/.local/bin/jedi-language-server",
-        "arguments": ["-vv"],
+        "arguments": [
+          "-vv"
+        ],
       },
       "initialization_options": {
         "workspace": {
@@ -317,13 +339,18 @@
         "settings": {
           "lineLength": 80,
           "lint": {
-            "extendSelect": ["I"],
+            "extendSelect": [
+              "I"
+            ],
           },
         },
       },
       "binary": {
         "path": "/home/linuxbrew/.linuxbrew/bin/ruff",
-        "arguments": ["server", "--preview"],
+        "arguments": [
+          "server",
+          "--preview"
+        ],
       },
     },
     "rust-analyzer": {
