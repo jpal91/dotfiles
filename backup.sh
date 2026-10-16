@@ -25,6 +25,7 @@ cd "$TEMP"
 "$HOME/bin/proton-drive" filesystem upload \
 	-f replace \
 	-d replace \
+	--json \
 	$(ls -A "$TEMP") \
 	/my-files/laptop-backup
 

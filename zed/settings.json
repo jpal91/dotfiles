@@ -11,6 +11,13 @@
   "format_on_save": "on",
   "cli_default_open_behavior": "existing_window",
   "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "auto",
+        "model": "opus"
+      },
+      "type": "registry"
+    },
     "opencode": {
       "default_config_options": {
         "mode": "plan",
@@ -262,9 +269,9 @@
     },
     "Python": {
       "language_servers": [
-        "basedpyright-alt",
+        "ty",
         "ruff",
-        "!ty",
+        "!basedpyright-alt",
         "!basedpyright",
         "!pyrefly",
         "!pylsp",
