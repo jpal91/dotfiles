@@ -83,3 +83,9 @@ fdignore = "~/.config/fd/ignore"
 [bin.files]
 "bin/gh-single.fish" = "~/bin/gh-single"
 "bin/dotter.sh" = "~/bin/dotter"
+
+[skills]
+
+[skills.files]
+"skills/pair-programming" = "~/.agents/skills/pair-programming"
+
