@@ -4,7 +4,7 @@ set -e
 # Downloads some initial packages in the case of Debian/Ubuntu
 if command -v apt > /dev/null 2>&1; then
 	sudo apt update -y && sudo apt upgrade -y
-	sudo apt install -y curl git gcc build-essential ca-certificates libtool-bin xclip python3-is-python
+	sudo apt install -y curl git gcc build-essential ca-certificates libtool-bin xclip python-is-python3
 
 	# Additional Python updates to make sure current version is correct and `python` is the main path callable
 	sudo add-apt-repository ppa:deadsnakes/ppa -y
