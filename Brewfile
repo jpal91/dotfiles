@@ -9,8 +9,6 @@ brew "awscli"
 brew "bat"
 # Binary installation for rust projects
 brew "cargo-binstall"
-# Cut, copy, and paste anything, anywhere, all from the terminal
-brew "clipboard"
 # Utility for rendering projects templates
 brew "copier"
 # More intuitive version of du in rust
@@ -23,6 +21,8 @@ brew "fd"
 brew "fish"
 # GitHub command-line tool
 brew "gh"
+# Audit git repos for secrets
+brew "gitleaks"
 # Post-modern modal text editor
 brew "helix"
 # Interactive environments for writing and running code
@@ -37,6 +37,8 @@ brew "lsd"
 brew "mask"
 # Modern Linker
 brew "mold"
+# Remote terminal application
+brew "mosh"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -53,36 +55,17 @@ brew "ruff"
 brew "sd"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Terminal multiplexer
+brew "tmux"
+# Markup-based typesetting system
+brew "typst"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-#go "github.com/xuri/xgen/cmd/xgen"
-#cargo "ai-memory"
 cargo "bottom"
-#cargo "cargo-clean-all"
 cargo "cargo-expand"
 cargo "cargo-generate"
-#cargo "cargo-workspaces"
-#cargo "create-tauri-app"
-#cargo "diesel_cli"
-#cargo "eedit"
-#cargo "fake"
-#cargo "inlyne"
-#cargo "rhai-lib"
-#cargo "sea-orm-cli"
-#cargo "trash"
-#cargo "twiggy"
-#cargo "wasm-pack"
-#cargo "watcher"
-#uv "basedpyright"
-#uv "bittytax"
-#uv "duckduckgo-mcp-server"
-#uv "jedi-language-server"
-#uv "mismo4"
-#uv "pyrefly"
-#uv "rembg[cli,cpu]"
 uv "ruff"
 uv "ty"
-#flatpak "com.orama_interactive.Pixelorama"
-#npm "corepack"
+npm "openclaw"
