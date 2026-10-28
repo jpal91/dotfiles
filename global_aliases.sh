@@ -21,17 +21,23 @@ alias .....='cd ../../../../'
 
 alias dotfiles='~/.dotfiles'
 
-if [ -f ~/bin/nv ]; then
+if command -v nv >/dev/null 2>&1; then
 	alias nvim='~/bin/nv'
 fi
 
 alias dotfiles='cd ~/.dotfiles/'
 
-alias msk='mask --maskfile ~/.dotfiles/maskfile.md'
+if command -v mask >/dev/null 2>&1; then
+    alias msk='mask --maskfile ~/.dotfiles/maskfile.md'
+fi
 
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 
-alias wlc='wl-copy'
-alias wlp='wl-paste'
-
+if command -v wl-copy >/dev/null 2>&1 && [ -n "$WAYLAND_DISPLAY" ]; then
+    alias copy='wl-copy'
+    alias paste='wl-paste'
+elif command -v xclip >/dev/null 2>&1; then
+    alias copy='xclip -selection clipboard'
+    alias paste='xclip -selection clipboard -o'
+fi
 # alias mux='mosh $1 -- tmux new -A -s main'
