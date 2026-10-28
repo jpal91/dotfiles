@@ -88,4 +88,3 @@ fdignore = "~/.config/fd/ignore"
 
 [skills.files]
 "skills/pair-programming" = "~/.agents/skills/pair-programming"
-

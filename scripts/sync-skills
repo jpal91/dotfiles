@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# Updates the list of 3rd party installed skills and
+# updates the global dotter confirm to sync any locally developed skills to the
+# global skills directory
+
 from configparser import ConfigParser
 from pathlib import Path
 
@@ -8,20 +12,20 @@ DF_SKILLS = DOTFILES / "skills"
 DOTTER_DIR = DOTFILES / ".dotter"
 SKILLS_DIR = Path("~/.agents/skills").expanduser()
 
+dotfiles_skills = (
+    [ddir.name for ddir in DF_SKILLS.iterdir() if ddir.is_dir()]
+    if DF_SKILLS.exists()
+    else []
+)
+
 installed_skills = (
-    [sdir.name for sdir in SKILLS_DIR.iterdir() if not sdir.is_symlink()]
+    [sdir.name for sdir in SKILLS_DIR.iterdir() if not sdir.name in dotfiles_skills]
     if SKILLS_DIR.exists()
     else []
 )
 
 with open(DF_SKILLS / "installed-skills.txt", "w") as f:
     f.write("\n".join(installed_skills))
-
-dotfiles_skills = (
-    [ddir.name for ddir in DF_SKILLS.iterdir() if ddir.is_dir()]
-    if DF_SKILLS.exists()
-    else []
-)
 
 home = str(Path("~").expanduser())
 config = ConfigParser()

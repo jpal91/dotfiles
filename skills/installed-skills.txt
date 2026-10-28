@@ -1,7 +1,6 @@
 docx
 skill-creator
 pdf
-pair-programming
 xlsx
 pptx
 find-skills
