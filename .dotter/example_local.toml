@@ -9,7 +9,8 @@ includes = []
 #   "fd",
 #   "aliases",
 #   "starship",
-#   "zed"
+#   "zed",
+#   "bin"
 # ]
 
 [files]

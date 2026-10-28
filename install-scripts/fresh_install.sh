@@ -23,10 +23,6 @@ if ! test -f .dotter/local.toml; then
 	exit 1
 else
 	./dotter deploy --force
-
-	if ! test -L "$HOME/bin/dotter"; then
-		ln -s ~/.dotfiles/dotter.sh ~/bin/dotter
-	fi
 fi
 
 # Install Homebrew
