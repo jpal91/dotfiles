@@ -31,4 +31,7 @@ alias msk='mask --maskfile ~/.dotfiles/maskfile.md'
 
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 
+alias wlc='wl-copy'
+alias wlp='wl-paste'
+
 # alias mux='mosh $1 -- tmux new -A -s main'
