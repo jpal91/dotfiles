@@ -12,7 +12,6 @@ cp -r \
 	"$HOME/.ssh" \
 	"$HOME/.gitconfig" \
 	"$HOME/.agents" \
-	"$HOME/.claude" \
 	"$TEMP/"
 
 cp -r "$HOME/.config/opencode" "$TEMP/.config/"
