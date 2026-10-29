@@ -15,7 +15,6 @@ set -x PNPM_HOME $HOME/.local/share/pnpm
 # Keybindings
 bind \ck kill-whole-line
 
-fish_add_path -a $PNPM_HOME
 fish_add_path -a "$PNPM_HOME/bin"
 
 

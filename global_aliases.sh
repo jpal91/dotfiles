@@ -34,10 +34,10 @@ fi
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 
 if command -v wl-copy >/dev/null 2>&1 && [ -n "$WAYLAND_DISPLAY" ]; then
-    alias copy='wl-copy'
-    alias paste='wl-paste'
+    alias wlc='wl-copy'
+    alias wlp='wl-paste'
 elif command -v xclip >/dev/null 2>&1; then
-    alias copy='xclip -selection clipboard'
-    alias paste='xclip -selection clipboard -o'
+    alias wlc='xclip -selection clipboard'
+    alias wlp='xclip -selection clipboard -o'
 fi
 # alias mux='mosh $1 -- tmux new -A -s main'

@@ -123,16 +123,16 @@ unset color_prompt force_color_prompt
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+export PATH="$PNPM_HOME/bin:$PATH"
 # pnpm end
 
 # Adding path to local scripts
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 . "$HOME/.cargo/env"
 
 # Created by `pipx` on 2023-10-25 15:38:14
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 alias justl="just -f local.justfile"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
