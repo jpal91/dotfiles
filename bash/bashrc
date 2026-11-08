@@ -137,3 +137,6 @@ export PATH="$PATH:$HOME/.local/bin"
 alias justl="just -f local.justfile"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$HOME/.local/bin:$PATH
+
+# golang
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"

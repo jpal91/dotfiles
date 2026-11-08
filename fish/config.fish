@@ -17,6 +17,10 @@ bind \ck kill-whole-line
 
 fish_add_path -a "$PNPM_HOME/bin"
 
+# golang
+fish_add_path -a "/usr/local/go/bin"
+fish_add_path -a "$HOME/go/bin"
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
